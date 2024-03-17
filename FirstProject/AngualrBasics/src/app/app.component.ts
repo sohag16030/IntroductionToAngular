@@ -9,5 +9,6 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'AngualrBasics';
+  title = 'AngualrApp';
+  message = 'this is message property'
 }
