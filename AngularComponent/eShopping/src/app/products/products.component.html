@@ -1,10 +1,13 @@
 <div class="product-row">
-    <div *ngFor="let product of products" class="product">
+    <div *ngFor="let product of products" class="product" [ngStyle]="{backgroundColor: product.stock === 'Available' ? '#407187': '#b366ff'}">
         <img [src]="product.image" alt="{{ product.name }}">
         <div class="description">
             <h2>{{ product.name }}</h2>
+            <p [ngStyle]="{color:product.stock === 'Available' ? 'Green' : 'Red'}"><b><i>{{ product.stock }}</i></b></p>
             <p>{{ product.description }}</p>
             <p>Price: {{ product.price | currency }}</p>
+            <button>Show Details</button>
+            <button class="buynow">Buy Now</button>
         </div>
     </div>
   </div>
