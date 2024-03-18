@@ -1,1 +1,6 @@
-<p>notification works!</p>
+
+<div [hidden]="isHidden" class="notification">
+    <p> This website uses cookies to provide a better user experience.</p>
+    <button (click)="hideNotificationBar()">X</button>
+</div>
+
