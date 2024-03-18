@@ -13,5 +13,5 @@ export class NotificationComponent  {
     this.isHidden = true;
     console.log(this.isHidden);
   }
-  
+
 }

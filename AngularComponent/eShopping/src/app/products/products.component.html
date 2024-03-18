@@ -1,0 +1,11 @@
+<div class="product-row">
+    <div *ngFor="let product of products" class="product">
+        <img [src]="product.image" alt="{{ product.name }}">
+        <div class="description">
+            <h2>{{ product.name }}</h2>
+            <p>{{ product.description }}</p>
+            <p>Price: {{ product.price | currency }}</p>
+        </div>
+    </div>
+  </div>
+  

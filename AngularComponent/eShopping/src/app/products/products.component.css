@@ -1,0 +1,26 @@
+.product-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjust as needed */
+  }
+  
+  .product {
+    width: calc(50% - 10px); /* Adjust as needed */
+    margin-bottom: 20px; /* Adjust margin as needed */
+    display: flex;
+  }
+  
+  .product img {
+    width: 225px;
+    height: 225px;
+    margin-right: 20px; /* Adjust margin between image and description */
+  }
+  
+  .product .description {
+    flex: 1;
+  }
+  
+  .product h2, .product p {
+    margin: 0;
+  }
+  
