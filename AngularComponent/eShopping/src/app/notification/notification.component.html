@@ -1,5 +1,5 @@
 
-<div [hidden]="isHidden" class="notification">
+<div *ngIf="isHidden===false" class="notification">
     <p> This website uses cookies to provide a better user experience.</p>
     <button (click)="hideNotificationBar()">X</button>
 </div>

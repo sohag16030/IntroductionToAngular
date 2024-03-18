@@ -7,7 +7,7 @@
             <p>{{ product.description }}</p>
             <p>Price: {{ product.price | currency }}</p>
             <button>Show Details</button>
-            <button class="buynow">Buy Now</button>
+            <button class="buynow" *ngIf="product.stock==='Available'">Buy Now</button>
         </div>
     </div>
   </div>
