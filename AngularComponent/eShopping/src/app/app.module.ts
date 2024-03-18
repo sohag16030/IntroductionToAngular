@@ -10,6 +10,7 @@ import { footerComponent } from './footer/footer.component';
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
 import { ProductsComponent } from './products/products.component';
+import { FiltersComponent } from './filters/filters.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ProductsComponent } from './products/products.component';
     HeaderComponent,
     footerComponent,
     SearchComponent,
-    ProductsComponent
+    ProductsComponent,
+    FiltersComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,15 @@
+.filters {
+    margin-left: 70px;
+    margin-bottom: 20px;
+    margin-top: -7px;
+    display: flex;
+    justify-content: center;
+}
+
+.filters label {
+    margin-right: 20px; /* Adjust spacing between buttons */
+}
+
+.filters input[type="radio"] {
+    margin-right: 5px;
+}
