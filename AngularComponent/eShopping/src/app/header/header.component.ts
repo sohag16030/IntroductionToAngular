@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-
+   moto : string = "Find everything you need in one place"
+   getMoto(){
+    return this.moto;
+   }
+   source : string = "assets/img/header.jpg";
 }
