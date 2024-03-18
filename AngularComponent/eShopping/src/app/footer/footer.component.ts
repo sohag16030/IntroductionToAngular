@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-notification',
-  templateUrl: './notification.component.html',
-  styleUrls: ['./notification.component.css'] 
+  selector: 'app-footer',
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.css'] 
 })
-export class NotificationComponent  {
+export class footerComponent  {
   isHidden: boolean = false;
   
-  hideNotificationBar(){
+  hidefooter(){
     console.log("button clicked");
     this.isHidden = true;
     console.log(this.isHidden);

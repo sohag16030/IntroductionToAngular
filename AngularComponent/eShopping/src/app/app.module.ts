@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { ContainerComponent } from './container/container.component';
 import { NavComponent } from './nav/nav.component';
 import { HeaderComponent } from './header/header.component';
-import { NotificationComponent } from './notification/notification.component';
+import { footerComponent } from './footer/footer.component';
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
 import { ProductsComponent } from './products/products.component';
@@ -17,7 +17,7 @@ import { ProductsComponent } from './products/products.component';
     ContainerComponent,
     NavComponent,
     HeaderComponent,
-    NotificationComponent,
+    footerComponent,
     SearchComponent,
     ProductsComponent
   ],
