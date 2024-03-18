@@ -1,8 +1,16 @@
+<div>
+    <app-search></app-search>
+    <app-filters [countTshirt]="getTotalTshirts()"
+                 [countHoodie]="getTotalHoodies()"
+                 [countJeans]="getTotalJeans()">
+    </app-filters>
+</div>
+
 <div class="product-row">
     <div *ngFor="let product of products" class="product" [ngStyle]="{backgroundColor: product.stock === 'Available' ? '#407187': '#66ffd9'}">
         <img [src]="product.image" alt="{{ product.name }}">
         <div class="description">
-            <h2>{{ product.name }}</h2>
+            <h2>{{ product.category }}</h2>
             <p [ngStyle]="{color:product.stock === 'Available' ? '#00b300' : 'Red'}">{{ product.stock }}</p>
             <p>{{ product.description }}</p>
             <p>Price: {{ product.price | currency }}</p>
@@ -13,4 +21,4 @@
             </ng-template>
         </div>
     </div>
-  </div>
+</div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-filters',
@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './filters.component.css'
 })
 export class FiltersComponent {
-  countTshirt=0;
-  countJeans=0;
-  countHoodie=0;
+  @Input() countTshirt:number = 0;
+  @Input() countJeans:number = 0;
+  @Input() countHoodie:number = 0;
 }
