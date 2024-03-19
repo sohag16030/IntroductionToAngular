@@ -4,23 +4,26 @@
                  [countAll]="getAll()"
                  [countTshirt]="getTotalTshirt()"
                  [countHoodie]="getTotalHoodie()"
-                 [countJeans]="getTotalJeans()">
+                 [countJeans]="getTotalJeans()"
+                 (filterRadioButtonSelectionChanged)="onFilterRadioButtonChanged($event)">
     </app-filters>
 </div>
 
 <div class="product-row">
-    <div *ngFor="let product of products" class="product" [ngStyle]="{backgroundColor: product.stock === 'Available' ? '#407187': '#66ffd9'}">
-        <img [src]="product.image" alt="{{ product.name }}">
-        <div class="description">
-            <h2>{{ product.category }}</h2>
-            <p [ngStyle]="{color:product.stock === 'Available' ? '#00b300' : 'Red'}">{{ product.stock }}</p>
-            <p>{{ product.description }}</p>
-            <p>Price: {{ product.price | currency }}</p>
-            <button>Show Details</button>
-            <button class="buynow" *ngIf="product.stock==='Available';else notifyme">Buy Now</button>
-            <ng-template #notifyme>
-                <button class="btnNotify">Notify Me</button>
-            </ng-template>
+    <ng-container *ngFor="let product of products">
+        <div class="product" [ngStyle]="{backgroundColor: product.stock === 'Available' ? '#407187': '#66ffd9'}" *ngIf="productCountRadioButton === 'All' || productCountRadioButton === product.category">
+            <img [src]="product.image" alt="{{ product.type }}">
+            <div class="description">
+                <h2>{{ product.category }}</h2>
+                <p [ngStyle]="{color:product.stock === 'Available' ? '#00b300' : 'Red'}">{{ product.stock }}</p>
+                <p>{{ product.description }}</p>
+                <p>Price: {{ product.price | currency }}</p>
+                <button>Show Details</button>
+                <button class="buynow" *ngIf="product.stock==='Available';else notifyme">Buy Now</button>
+                <ng-template #notifyme>
+                    <button class="btnNotify">Notify Me</button>
+                </ng-template>
+            </div>
         </div>
-    </div>
+    </ng-container>
 </div>

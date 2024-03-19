@@ -77,4 +77,11 @@ export class ProductsComponent {
   getTotalJeans(){
     return this.products.filter(tshirt=>tshirt.category==="Jeans").length;
   }
+
+  productCountRadioButton: string = 'All';
+
+  onFilterRadioButtonChanged(data: string){
+    this.productCountRadioButton = data;
+    console.log(this.productCountRadioButton)
+  }
 }
