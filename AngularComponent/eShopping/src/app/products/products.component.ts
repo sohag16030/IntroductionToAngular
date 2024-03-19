@@ -78,10 +78,17 @@ export class ProductsComponent {
     return this.products.filter(tshirt=>tshirt.category==="Jeans").length;
   }
 
-  expectedCategory: string = 'All';
+  filteredCategory: string = 'All';
+  searchText :string = '';
 
   onFilterRadioButtonChanged(data: string){
-    this.expectedCategory = data;
-    console.log(this.expectedCategory)
+    this.filteredCategory = data;
+    console.log(this.filteredCategory)
   }
+
+  onSearchSectionChanged(searchValue: string ){
+    this.searchText = searchValue;
+    console.log(this.searchText)
+  }
+ 
 }

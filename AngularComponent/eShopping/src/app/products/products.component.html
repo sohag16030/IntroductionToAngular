@@ -1,7 +1,7 @@
 <div>
-    <app-search></app-search>
-    <app-filters 
-                 [countAll]="getAll()"
+    <app-search (searchValueSectionChanged)="onSearchSectionChanged($event)">
+    </app-search>
+    <app-filters [countAll]="getAll()"
                  [countTshirt]="getTotalTshirt()"
                  [countHoodie]="getTotalHoodie()"
                  [countJeans]="getTotalJeans()"
@@ -11,7 +11,8 @@
 
 <div class="product-row">
     <ng-container *ngFor="let product of products">
-        <div class="product" [ngStyle]="{backgroundColor: product.stock === 'Available' ? '#407188': '#699'}" *ngIf="expectedCategory === 'All' || expectedCategory === product.category">
+        <div class="product" [ngStyle]="{backgroundColor: product.stock === 'Available' ? '#407188': '#699'}" 
+                    *ngIf="((searchText!=='' && product.category.toLowerCase().includes(searchText)) || filteredCategory==='All' || filteredCategory===product.category)">
             <img [src]="product.image" alt="{{ product.type }}">
             <div class="description">
                 <h2>{{ product.category }}</h2>

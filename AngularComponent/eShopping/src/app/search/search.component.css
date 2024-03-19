@@ -14,13 +14,13 @@
   
   button {
     padding: 8px 16px;
-    background-color:#3b84bf;
+    background-color:#bb3bbf;
     color:white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     margin-left: 8px;
   }
-  .changeBackgroundColor {
+  /* .changeBackgroundColor {
     background-color: rgba(144, 146, 133, 0.961);
-  }
+  } */
