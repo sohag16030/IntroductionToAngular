@@ -11,7 +11,7 @@ export class FiltersComponent {
   @Input() countJeans: number = 0;
   @Input() countHoodie: number = 0;
 
-  selectedRadioButtonValue:string = "All";
+  selectedRadioButtonValue:string = "All"; // this value will be passed into parent component using @Output() directives
 
   @Output()
   filterRadioButtonSelectionChanged: EventEmitter<string> = new EventEmitter<string>();
