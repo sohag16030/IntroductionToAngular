@@ -64,10 +64,14 @@ export class ProductsComponent {
       image: 'assets/img/product/hoodie2.jpg',
     }
   ]
-  getTotalTshirts(){
+
+  getAll(){
+    return this.products.length;
+  }
+  getTotalTshirt(){
     return this.products.filter(tshirt=>tshirt.category==="T-Shirt").length;
   }
-  getTotalHoodies(){
+  getTotalHoodie(){
     return this.products.filter(tshirt=>tshirt.category==="Hoodie").length;
   }
   getTotalJeans(){

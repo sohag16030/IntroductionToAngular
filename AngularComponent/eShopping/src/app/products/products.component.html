@@ -1,7 +1,9 @@
 <div>
     <app-search></app-search>
-    <app-filters [countTshirt]="getTotalTshirts()"
-                 [countHoodie]="getTotalHoodies()"
+    <app-filters 
+                 [countAll]="getAll()"
+                 [countTshirt]="getTotalTshirt()"
+                 [countHoodie]="getTotalHoodie()"
                  [countJeans]="getTotalJeans()">
     </app-filters>
 </div>
