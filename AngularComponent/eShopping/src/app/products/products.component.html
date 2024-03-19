@@ -11,7 +11,7 @@
 
 <div class="product-row">
     <ng-container *ngFor="let product of products">
-        <div class="product" [ngStyle]="{backgroundColor: product.stock === 'Available' ? '#407187': '#66ffd9'}" *ngIf="expectedCategory === 'All' || expectedCategory === product.category">
+        <div class="product" [ngStyle]="{backgroundColor: product.stock === 'Available' ? '#407188': '#699'}" *ngIf="expectedCategory === 'All' || expectedCategory === product.category">
             <img [src]="product.image" alt="{{ product.type }}">
             <div class="description">
                 <h2>{{ product.category }}</h2>
