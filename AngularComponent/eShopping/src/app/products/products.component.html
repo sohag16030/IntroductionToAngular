@@ -9,10 +9,12 @@
     </app-filters>
 </div>
 
+<!-- (searchText!=='' && product.category.toLowerCase().includes(searchText)) -->
+
 <div class="product-row">
     <ng-container *ngFor="let product of products">
         <div class="product" [ngStyle]="{backgroundColor: product.stock === 'Available' ? '#407188': '#699'}" 
-                    *ngIf="((searchText!=='' && product.category.toLowerCase().includes(searchText)) || filteredCategory==='All' || filteredCategory===product.category)">
+                    *ngIf="(filteredCategory === 'All' || filteredCategory === product.category)">
             <img [src]="product.image" alt="{{ product.type }}">
             <div class="description">
                 <h2>{{ product.category }}</h2>
