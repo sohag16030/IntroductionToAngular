@@ -1,0 +1,8 @@
+<div class="container" *ngIf="flag">
+  <input type="text" #input />
+  <button (click)="OnSubmit(input)">Submit</button>
+</div>
+<app-demo [value]="inputText">
+  <p>This is projected content {{inputText}}</p>
+</app-demo>
+<button (click)="OnDestroy()"> Destroy </button>
