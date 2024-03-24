@@ -1,8 +1,17 @@
 <div appBackgroundStyle appHover>
-  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum voluptatibus maiores asperiores corporis excepturi alias voluptatum sunt tenetur. 
-    Omnis commodi laboriosam necessitatibus ipsum numquam earum odio illo assumenda perspiciatis nam.</p>
+  <p>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum voluptatibus
+    maiores asperiores corporis excepturi alias voluptatum sunt tenetur. Omnis
+    commodi laboriosam necessitatibus ipsum numquam earum odio illo assumenda
+    perspiciatis nam.
+  </p>
 </div>
-<div appBetterhighlight>
-  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum voluptatibus maiores asperiores corporis excepturi alias voluptatum sunt tenetur. 
-    Omnis commodi laboriosam necessitatibus ipsum numquam earum odio illo assumenda perspiciatis nam.</p>
+<button class="btn-btn-green" (click)="DisplayNotice()">click</button>
+<div appBetterhighlight *ngIf="display">
+  <p>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum voluptatibus
+    maiores asperiores corporis excepturi alias voluptatum sunt tenetur. Omnis
+    commodi laboriosam necessitatibus ipsum numquam earum odio illo assumenda
+    perspiciatis nam.
+  </p>
 </div>
