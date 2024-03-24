@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { JavascriptComponent } from './javascript/javascript.component';
 import { AngularComponent } from './angular/angular.component';
+import { EnrollService } from './services/enroll.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { AngularComponent } from './angular/angular.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [EnrollService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

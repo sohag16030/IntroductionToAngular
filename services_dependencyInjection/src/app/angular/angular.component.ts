@@ -5,7 +5,6 @@ import { EnrollService } from '../services/enroll.service';
   selector: 'app-angular',
   templateUrl: './angular.component.html',
   styleUrl: './angular.component.css',
-  providers: [EnrollService],
 })
 export class AngularComponent {
   title: string = 'angular';
