@@ -1,16 +1,18 @@
 export class User {
+  id: number = 0; // Assuming a default value of 0 for the ID
   name: string = '';
+  designation: string = '';
   status: string = '';
 }
 
 export class UserService {
   users: User[] = [
-    { name: 'Mike', status: 'active' },
-    { name: 'John', status: 'inactive' },
-    { name: 'Steve', status: 'active' },
+    { id: 1, name: 'Mike', designation: 'Software Engineer', status: 'active' },
+    { id: 2, name: 'John', designation: 'Junior Software Engineer', status: 'inactive' },
+    { id: 3, name: 'Steve', designation: 'Software Engineer', status: 'active' },
   ];
 
-  addNewUser(name: string, status: string) {
-    this.users.push({ name: name, status: status });
+  addNewUser(id: number, name: string, designation: string, status: string) {
+    this.users.push({ id: id, name: name, designation: designation, status: status });
   }
 }
