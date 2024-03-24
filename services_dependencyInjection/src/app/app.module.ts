@@ -6,18 +6,23 @@ import { AppComponent } from './app.component';
 import { JavascriptComponent } from './javascript/javascript.component';
 import { AngularComponent } from './angular/angular.component';
 import { EnrollService } from './services/enroll.service';
+import { UserService } from './services/user.service';
+import { AddUserComponent } from './add-user/add-user.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     JavascriptComponent,
-    AngularComponent
+    AngularComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [EnrollService],
+  providers: [EnrollService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

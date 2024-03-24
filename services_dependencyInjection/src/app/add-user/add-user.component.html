@@ -1,0 +1,20 @@
+<!-- add-user.component.html -->
+
+<div class="add-user-form">
+    <h2>Add New User</h2>
+    <form (submit)="addUser()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="name" required>
+      </div>
+      <div class="form-group">
+        <label for="status">Status:</label>
+        <select id="status" name="status" [(ngModel)]="status" required>
+          <option value="active">Active</option>
+          <option value="inactive">Inactive</option>
+        </select>
+      </div>
+      <button type="submit">Add User</button>
+    </form>
+  </div>
+  

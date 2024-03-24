@@ -1,4 +1,21 @@
-<div class="container">
+<!-- <div class="container">
   <app-angular></app-angular>
   <app-javascript></app-javascript>
-</div>
+</div> -->
+
+<app-add-user></app-add-user>
+
+<table class="user-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.name }}</td>
+      <td>{{ user.status }}</td>
+    </tr>
+  </tbody>
+</table>
