@@ -1,3 +1,9 @@
+
+.main-container{
+  background-color: #e44118;
+  width: 80%;
+  justify-content: center;
+}
 .navbar {
     background-color: #097e8e;
     color: #fff;
