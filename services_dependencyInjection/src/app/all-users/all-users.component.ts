@@ -16,5 +16,8 @@ export class AllUsersComponent {
   ngOnInit(){
     this.users = this.userService.users;
   }
+  showUserDeatils(user:User){
+    this.userService.showUserDeatils(user);
+  }
   
 }
