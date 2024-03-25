@@ -25,16 +25,3 @@
   .nav-link.active {
     background-color: #0b4765;
   }
-  
-  /* Responsive styling */
-  @media (max-width: 768px) {
-    .navbar-nav {
-      text-align: center;
-    }
-  
-    .nav-item {
-      display: block;
-      margin: 10px 0;
-    }
-  }
-  
