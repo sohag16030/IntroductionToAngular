@@ -1,0 +1,28 @@
+<!-- add-user.component.html -->
+
+<div class="add-user-form">
+    <h2>Add New User</h2>
+    <form (submit)="addUser()">
+      <div class="form-group">
+        <label for="id">Id:</label>
+        <input type="text" id="id" name="id" [(ngModel)]="id" required>
+      </div>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="name" required>
+      </div>
+      <div class="form-group">
+        <label for="designation">Designation:</label>
+        <input type="text" id="designation" name="designation" [(ngModel)]="designation" required>
+      </div>
+      <div class="form-group">
+        <label for="status">Status:</label>
+        <select id="status" name="status" [(ngModel)]="status" required>
+          <option value="active">Active</option>
+          <option value="inactive">Inactive</option>
+        </select>
+      </div>
+      <button type="submit">Add User</button>
+    </form>
+  </div>
+  

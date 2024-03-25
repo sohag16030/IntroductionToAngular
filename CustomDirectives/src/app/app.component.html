@@ -1,0 +1,22 @@
+<div appBackgroundStyle appHover>
+  <p>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum voluptatibus
+    maiores asperiores corporis excepturi alias voluptatum sunt tenetur. Omnis
+    commodi laboriosam necessitatibus ipsum numquam earum odio illo assumenda
+    perspiciatis nam.
+  </p>
+</div>
+<button class="btn-btn-green" (click)="DisplayNotice()">click</button>
+<div appBetterhighlight *ngIf="display;else myvar" >
+  <p>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum voluptatibus
+    maiores asperiores corporis excepturi alias voluptatum sunt tenetur. Omnis
+    commodi laboriosam necessitatibus ipsum numquam earum odio illo assumenda
+    perspiciatis nam.
+  </p>
+</div>
+<ng-template #myvar>
+  <div >
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+  </div>
+</ng-template>
