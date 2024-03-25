@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Observable, Observer, of, forkJoin,from } from 'rxjs';
+import { Observable, Observer, of, forkJoin, from } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -61,9 +62,16 @@ export class AppComponent {
   //myObservable = of(this.array1, this.array2);
   myObservable = from(this.array1);
 
+  //operators of rsjs
+  
+  transformObs = this.myObservable.pipe(
+    map((val: number) => val * 5),
+    filter((val: number) => val > 10)
+  );
+
   //call back 
   ngOnInit() {
-    this.myObservable.subscribe(
+    this.transformObs.subscribe(
       (val) => {
         console.log(val);
       },
