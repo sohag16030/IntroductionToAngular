@@ -1,14 +1,22 @@
 import { Component } from '@angular/core';
 import { Observable, Observer, of, forkJoin, from } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
+import { DataProviderService } from './data.Service';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
+  providers:[DataProviderService]
 })
 export class AppComponent {
-  title = 'Angular_Observables';
+  constructor(dataProviderService : DataProviderService) {}
+  
+
+}
+
+  // title = 'Angular_Observables';
 
   //observable creation using constructor....
   // myObservable = new Observable((observer) => {
@@ -56,31 +64,31 @@ export class AppComponent {
   //     }, 5000);
   // });
 
-  array1 = [1, 2, 3, 4];
-  array2 = ['A', 'B', 'C', 'D'];
+  // array1 = [1, 2, 3, 4];
+  // array2 = ['A', 'B', 'C', 'D'];
 
-  //myObservable = of(this.array1, this.array2);
-  myObservable = from(this.array1);
+  // //myObservable = of(this.array1, this.array2);
+  // myObservable = from(this.array1);
 
-  //operators of rsjs
-  
-  transformObs = this.myObservable.pipe(
-    map((val: number) => val * 5),
-    filter((val: number) => val > 10)
-  );
+  // //operators of rsjs
 
-  //call back 
-  ngOnInit() {
-    this.transformObs.subscribe(
-      (val) => {
-        console.log(val);
-      },
-      (error) => {
-        alert(error);
-      },
-      () => {
-        alert("complete");
-      }
-    );
-  }
-}
+  // transformObs = this.myObservable.pipe(
+  //   map((val: number) => val * 5),
+  //   filter((val: number) => val > 10)
+  // );
+
+  // //call back 
+  // ngOnInit() {
+  //   this.transformObs.subscribe(
+  //     (val) => {
+  //       console.log(val);
+  //     },
+  //     (error) => {
+  //       alert(error);
+  //     },
+  //     () => {
+  //       alert("complete");
+  //     }
+  //   );
+  // }
+
