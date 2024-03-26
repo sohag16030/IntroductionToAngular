@@ -9,12 +9,14 @@
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 20px;
-    margin: 10px; /* Adjust margin to reduce space between cards */
+    margin: 20px;
     width: 180px;
-    height: 260px;
+    height: 300px;
     background-color: #0e76817e;
-  }
-  
+    display: flex; /* Add flexbox display */
+    flex-direction: column; /* Ensure flex items are stacked vertically */
+    justify-content: space-between; /* Distribute space between items */
+}
   .card-title {
     font-size: 20px;
     margin-bottom: 10px;
@@ -39,7 +41,8 @@
     border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
-  }
+    margin-bottom: 10px; /* Optional: Add margin between buttons */
+}
   
   .subscription-button:hover {
     background-color: #3a242481;
