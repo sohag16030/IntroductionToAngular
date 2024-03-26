@@ -1,8 +1,9 @@
-<div class="card-container">
+<div class="card-container" *ngIf="course">
     <div class="card">
-      <h2 class="card-title">JavaScript</h2>
-      <img class="card-image" src="assets/javascript.png">
-      <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      <h2 class="card-title">{{ course.name }}</h2>
+      <img class="card-image" [src]="course.image" alt="{{ course.name }} Image">
+      <p class="card-description">{{ course.description }}</p>
       <div class="subscription-button">Enroll</div>
     </div>
   </div>
+  
