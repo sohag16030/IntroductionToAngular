@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { ErrorComponent } from './error/error.component';
 
 const appRoute:Routes = [
   {path:'',component:HomeComponent},
   {path:'Home',component:HomeComponent},
   {path:'About',component:AboutComponent},
-  {path:'Contact',component:ContactComponent}
+  {path:'Contact',component:ContactComponent},
+  {path:'**',component:ErrorComponent},
 ]
 
 @NgModule({
@@ -19,7 +21,8 @@ const appRoute:Routes = [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
