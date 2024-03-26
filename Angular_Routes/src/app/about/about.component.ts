@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-about',
@@ -8,9 +8,10 @@ import { Router } from '@angular/router';
 })
 export class AboutComponent {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
 
   navigateToHomePage() {
-    this.router.navigateByUrl('Home');
+    this.router.navigate(['Home'], { relativeTo: this.activatedRoute}); // relative route (currently activated route)
+    // this.router.navigateByUrl('Home'); //absolute path
   }
 }
