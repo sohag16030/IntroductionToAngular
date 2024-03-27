@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -10,16 +9,9 @@ import { ErrorComponent } from './error/error.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CourseComponent } from './courses/course/course.component';
 import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
 
-const appRoute:Routes = [
-  {path:'',component:HomeComponent},
-  {path:'Home',component:HomeComponent},
-  {path:'About',component:AboutComponent},
-  {path:'Contact',component:ContactComponent},
-  {path:'Courses',component:CoursesComponent},
-  {path:'Courses/Course/:id',component:CourseComponent},
-  {path:'**',component:ErrorComponent},
-]
+
 
 @NgModule({
   declarations: [
@@ -34,7 +26,7 @@ const appRoute:Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoute)
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
