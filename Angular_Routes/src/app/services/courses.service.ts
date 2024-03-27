@@ -1,4 +1,10 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+    providedIn: 'root'
+})
 export class CoursesService {
+    constructor() { }
     courses = [
         {
             id: 1,
@@ -38,4 +44,44 @@ export class CoursesService {
         }
     ];
 
+    getCourses() {
+        return [
+            {
+                id: 1,
+                name: 'JavaScript',
+                image: 'assets/javascript.png',
+                description: 'Learn the basics of web development'
+            },
+            {
+                id: 2,
+                name: 'Angular',
+                image: 'assets/angular.png',
+                description: 'Learn the basics of web development'
+            },
+            {
+                id: 3,
+                name: 'React',
+                image: 'assets/react.png',
+                description: 'Learn the basics of web development'
+            },
+            {
+                id: 4,
+                name: 'JavaScript',
+                image: 'assets/javascript.png',
+                description: 'Learn the basics of web development'
+            },
+            {
+                id: 5,
+                name: 'Angular',
+                image: 'assets/angular.png',
+                description: 'Learn the basics of web development'
+            },
+            {
+                id: 6,
+                name: 'React',
+                image: 'assets/react.png',
+                description: 'Learn the basics of web development'
+            }
+        ];
+    }
 }

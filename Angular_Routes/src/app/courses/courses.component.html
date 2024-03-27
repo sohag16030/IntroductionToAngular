@@ -1,67 +1,12 @@
-  <div class="about-us-container"><h2>All Courses</h2></div>
-  <div class="card-container">
-    <div class="card">
-      <h2 class="card-title">JavaScript</h2>
-      <img class="card-image" src="assets/javascript.png">
-      <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      <div class="subscription-button">Enroll</div>
-      <div class="subscription-button" >Show Details</div>
-    </div>
-    <div class="card">
-      <h2 class="card-title">Angular</h2>
-      <img class="card-image" src="assets/angular.png">
-      <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      <div class="subscription-button">Enroll</div>
-      <div class="subscription-button">Show Details</div>
-    </div>
-    <div class="card">
-      <h2 class="card-title">React</h2>
-      <img class="card-image" src="assets/react.png">
-      <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      <div class="subscription-button">Enroll</div>
-      <div class="subscription-button">Show Details</div>
-    </div>
-    <div class="card">
-        <h2 class="card-title">JavaScript</h2>
-        <img class="card-image" src="assets/javascript.png">
-        <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        <div class="subscription-button">Enroll</div>
-        <div class="subscription-button">Show Details</div>
-      </div>
-      <div class="card">
-        <h2 class="card-title">Angular</h2>
-        <img class="card-image" src="assets/angular.png">
-        <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        <div class="subscription-button">Enroll</div>
-        <div class="subscription-button">Show Details</div>
-      </div>
-      <div class="card">
-        <h2 class="card-title">React</h2>
-        <img class="card-image" src="assets/react.png">
-        <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        <div class="subscription-button">Enroll</div>
-        <div class="subscription-button">Show Details</div>
-      </div>
-      <div class="card">
-        <h2 class="card-title">JavaScript</h2>
-        <img class="card-image" src="assets/javascript.png">
-        <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        <div class="subscription-button">Enroll</div>
-        <div class="subscription-button">Show Details</div>
-      </div>
-      <div class="card">
-        <h2 class="card-title">Angular</h2>
-        <img class="card-image" src="assets/angular.png">
-        <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        <div class="subscription-button">Enroll</div>
-        <div class="subscription-button">Show Details</div>
-      </div>
-      <div class="card">
-        <h2 class="card-title">React</h2>
-        <img class="card-image" src="assets/react.png">
-        <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        <div class="subscription-button">Enroll</div>
-        <div class="subscription-button">Show Details</div>
-      </div>
+<div class="about-us-container">
+  <h2>All Courses</h2>
+</div>
+<div class="card-container">
+  <div class="card" *ngFor="let course of courses">
+    <h2 class="card-title">{{ course.name }}</h2>
+    <img class="card-image" [src]="course.image" [alt]="course.name">
+    <p class="card-description">{{ course.description }}</p>
+    <div class="subscription-button">Enroll</div>
+    <div class="subscription-button"  [routerLink]="'Course/' + course.id">Show Details</div>
   </div>
-  
+</div>
