@@ -1,4 +1,5 @@
 <div class="card-container" *ngIf="course">
+  <a routerLink="/Courses">Back To Courses Page</a>
     <div class="card">
       <h2 class="card-title">{{ course.name }}</h2>
       <img class="card-image" [src]="course.image" alt="{{ course.name }} Image">
