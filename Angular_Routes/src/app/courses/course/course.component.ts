@@ -15,7 +15,7 @@ export class CourseComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private service: CoursesService) { }
 
   ngOnInit() {
-    
+
     this.activatedRoute.paramMap.subscribe((param) => {
       const courseId = this.activatedRoute.snapshot.paramMap.get('id');
       if (courseId !== null) {
