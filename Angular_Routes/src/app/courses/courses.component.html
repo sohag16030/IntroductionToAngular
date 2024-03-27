@@ -7,6 +7,7 @@
     <img class="card-image" [src]="course.image" [alt]="course.name">
     <p class="card-description">{{ course.description }}</p>
     <div class="subscription-button">Enroll</div>
-    <div class="subscription-button"  [routerLink]="'Course/' + course.id">Show Details</div>
+    <div class="subscription-button" [routerLink]="'/Courses/Course/' + course.id">Show Details</div>
+    <!-- uisng / it's adding with root path is called absolute path -->
   </div>
 </div>
