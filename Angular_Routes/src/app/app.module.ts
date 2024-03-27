@@ -9,6 +9,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ErrorComponent } from './error/error.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CourseComponent } from './courses/course/course.component';
+import { FormsModule } from '@angular/forms';
 
 const appRoute:Routes = [
   {path:'',component:HomeComponent},
@@ -32,6 +33,7 @@ const appRoute:Routes = [
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(appRoute)
   ],
   providers: [],

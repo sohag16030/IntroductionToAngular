@@ -1,10 +1,17 @@
+<button routerLink="/Courses" style="margin:20px 30px">Back</button>
+
 <div class="card-container" *ngIf="course">
-  <a routerLink="/Courses">Back To Courses Page</a>
-    <div class="card">
-      <h2 class="card-title">{{ course.name }}</h2>
-      <img class="card-image" [src]="course.image" alt="{{ course.name }} Image">
-      <p class="card-description">{{ course.description }}</p>
+  <div class="card">
+    <h2 class="card-title">{{ course.name }}</h2>
+    <div *ngIf="editMode">
+      <input type="text" [(ngModel)]="course.name" style="text-align: center;margin-bottom: 10px;">
     </div>
-    <a [routerLink]="'/Courses/Course/1'"> Go To first Course</a>
+    <img class="card-image" [src]="course.image" alt="{{ course.name }} Image">
+    <p class="card-description">{{ course.description }}</p>
+    <div>
+      <button (click)="appendQueryParam()">Edit Title</button>
+      <button (click)="editMode=false" [routerLink]="'/Courses/Course/' + course.id">Update</button>
+    </div>
   </div>
-  
+  <!-- <a [routerLink]="'/Courses/Course/1'"> Go To first Course</a> -->
+</div>

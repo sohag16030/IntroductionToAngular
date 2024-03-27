@@ -10,8 +10,8 @@
     border-radius: 5px;
     padding: 20px;
     margin: 10px; /* Adjust margin to reduce space between cards */
-    width: 180px;
-    height: 260px;
+    width: 380px;
+    height: 460px;
     background-color: #0e76817e;
   }
   
@@ -64,4 +64,19 @@
     font-size: 16px;
     line-height: 1.6;
     color: #333;
+  }
+
+ button {
+    text-align: center;
+    background-color: #082a5dc2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 10px; /* Optional: Add margin between buttons */
+}
+  
+  button:hover {
+    background-color: #27243a81;
   }
