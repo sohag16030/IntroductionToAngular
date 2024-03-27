@@ -15,15 +15,14 @@ export class CourseComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private service: CoursesService) { }
 
   ngOnInit() {
-    const idParam = this.activatedRoute.snapshot.paramMap.get('id');
+    
+    this.activatedRoute.paramMap.subscribe((param) => {
+      const courseId = this.activatedRoute.snapshot.paramMap.get('id');
+      if (courseId !== null) {
+        this.course = this.service.courses.find(x => x.id === +courseId);
+      }
+    });
 
-    if (idParam !== null) {
-      console.log(idParam);
-      this.course = this.service.courses.find(x => x.id === +idParam);
-      console.log(this.course);
-    } else {
-      console.error("ID parameter is null.");
-    }
   }
 }
 
