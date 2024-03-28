@@ -14,7 +14,8 @@ const appRoute: Routes = [
   { path: 'Home', component: HomeComponent },
   { path: 'About', component: AboutComponent },
   { path: 'Contact', component: ContactComponent },
-  { path: 'Courses', component: CoursesComponent},
+  // { path: 'Courses', component: CoursesComponent, canActivate: [CourseGuardService] },// parent route guard
+  { path: 'Courses', component: CoursesComponent}, // child route guard
   {
     path: 'Courses', canActivateChild: [CourseGuardService], children: [
       { path: 'Course/:id', component: CourseComponent },
