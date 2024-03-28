@@ -18,4 +18,8 @@ export class CourseGuardService implements CanActivate {
             return false;
         }
     }
+
+    canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+      return this.canActivate(childRoute,state);
+    }
 }
