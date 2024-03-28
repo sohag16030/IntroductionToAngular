@@ -6,26 +6,25 @@ import { ErrorComponent } from './error/error.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CourseComponent } from './courses/course/course.component';
 import { NgModule } from '@angular/core';
+import { CourseGuardService } from './course-guard.service';
+import { AuthService } from './auth.service';
 
-const appRoute:Routes = [
-  {path:'',component:HomeComponent},
-  {path:'Home',component:HomeComponent},
-  {path:'About',component:AboutComponent},
-  {path:'Contact',component:ContactComponent},
-  {path:'Courses',component:CoursesComponent},
-  {path:'Courses/Course/:id',component:CourseComponent},
-  {path:'**',component:ErrorComponent},
+const appRoute: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'Home', component: HomeComponent },
+  { path: 'About', component: AboutComponent },
+  { path: 'Contact', component: ContactComponent },
+  { path: 'Courses', component: CoursesComponent, canActivate: [CourseGuardService] },
+  { path: 'Courses/Course/:id', component: CourseComponent },
+  { path: '**', component: ErrorComponent },
 ]
 
 @NgModule({
-    imports: [
-        RouterModule.forRoot(appRoute)
-      ],
-      exports:[
-        RouterModule
-      ]
-  })
+  imports: [RouterModule.forRoot(appRoute)],
+  exports: [RouterModule],
+  providers: [CourseGuardService, AuthService]
+})
 
-export class AppRoutingModule{
+export class AppRoutingModule {
 
 }

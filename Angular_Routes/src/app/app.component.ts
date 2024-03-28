@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +7,17 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  // title = 'Angular_Routes';
 
+  constructor(private authService: AuthService) { }
+
+  login() {
+    console.log("Loggedin");
+    this.authService.loggedIn = true;
+  }
+  logout() {
+    console.log("Loggedout");
+    this.authService.loggedIn = false;
+  }
   // constructor(private acitivatedRoute: ActivatedRoute) { }
 
   // ngOnInit() {
@@ -24,4 +33,5 @@ export class AppComponent {
   //     element.scrollIntoView({ behavior: 'smooth' });
   //   }
   // }
+
 }
