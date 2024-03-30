@@ -1,24 +1,29 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
 
   reactiveForm: FormGroup;
 
+  constructor(private fb: FormBuilder) {}
+
   ngOnInit() {
-    this.reactiveForm = new FormGroup({
-      firstName: new FormControl(null, Validators.required),
-      lastName: new FormControl(null, Validators.required),
-      email: new FormControl(null, [Validators.required, Validators.email]),
-      country: new FormControl(null),
-      gender: new FormControl(null)
+    this.reactiveForm = this.fb.group({
+      personalFormGroup: this.fb.group({
+        firstName: [null, Validators.required],
+        lastName: [null, Validators.required],
+        email: [null, [Validators.required, Validators.email]],
+      }),
+      country: [null],
+      gender: [null]
     });
   }
+
   onSubmit() {
     console.log(this.reactiveForm);
   }
