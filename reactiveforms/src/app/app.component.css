@@ -5,67 +5,72 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: rgb(175, 207, 206);
-  }
-  
-  .form-group {
+}
+
+.form-group {
     margin-bottom: 20px;
-  }
-  
-  label {
+}
+
+label {
     display: block;
     margin-bottom: 5px;
-  }
-  
-  #country{
-    width: 99%;
-  }
+}
 
-  input[type="text"],
-  input[type="email"],
-  select {
+#country {
+    width: 99%;
+}
+
+input[type="text"],
+input[type="email"],
+select {
     width: 95%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-  }
-  
-  select[multiple] {
+}
+
+select[multiple] {
     height: 100px;
-  }
-  .form-group {
+}
+
+.form-group {
     margin-bottom: 20px;
-  }
-  
-  .form-group label {
+}
+
+.form-group label {
     display: block;
     margin-bottom: 5px;
-  }
-  
-  .form-group .radio-group,
-  .form-group .checkbox-group {
+}
+
+.form-group .radio-group,
+.form-group .checkbox-group {
     display: flex;
     flex-wrap: wrap;
-  }
-  
-  .form-group .radio-group input[type="radio"],
-  .form-group .checkbox-group input[type="checkbox"] {
+}
+
+.form-group .radio-group input[type="radio"],
+.form-group .checkbox-group input[type="checkbox"] {
     margin-right: 10px;
-  }
-  
-  .form-group .radio-group label,
-  .form-group .checkbox-group label {
+}
+
+.form-group .radio-group label,
+.form-group .checkbox-group label {
     margin-right: 20px;
-  }
-  button {
+}
+
+button {
     padding: 10px 20px;
     background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
+}
+
+button:hover {
+    background-color: #00b327;
+}
+
+input.ng-invalid.ng-touched {
+    border: red 1px solid;
+}
