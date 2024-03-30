@@ -14,7 +14,8 @@
       <div class="form-group">
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" formControlName="email" />
-        <span style="color: red;" *ngIf="!reactiveForm.get('personalFormGroup.email').valid && reactiveForm.get('personalFormGroup.email').touched">
+        <span style="color: red;"
+          *ngIf="!reactiveForm.get('personalFormGroup.email').valid && reactiveForm.get('personalFormGroup.email').touched">
           This email you entered is not a valid email</span>
       </div>
     </div>
@@ -41,6 +42,12 @@
           <label for="female">Female</label>
         </div>
       </div>
+    </div>
+    <div formArrayName="skills">
+      <ng-container *ngFor="let skill of reactiveForm.get('skills')['controls'];index as i">
+      <input type="text" placeholder="add skill..." formControlName="{{i}}">
+      </ng-container>
+      <button (click)="addSkills()">Add Skills</button>
     </div>
 
     <button type="submit">Submit</button>

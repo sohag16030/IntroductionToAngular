@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,7 @@ export class AppComponent {
 
   reactiveForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
     this.reactiveForm = this.fb.group({
@@ -20,11 +20,17 @@ export class AppComponent {
         email: [null, [Validators.required, Validators.email]],
       }),
       country: [null],
-      gender: [null]
+      gender: [null],
+      skills: new FormArray([
+        new FormControl(null, Validators.required)
+      ])
     });
   }
 
   onSubmit() {
     console.log(this.reactiveForm);
+  }
+  addSkills() {
+    (<FormArray>this.reactiveForm.get('skills')).push(new FormControl(null,Validators.required));
   }
 }

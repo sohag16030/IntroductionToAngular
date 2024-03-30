@@ -17,7 +17,7 @@ label {
 }
 
 #country {
-    width: 99%;
+    width: 102%;
 }
 
 input[type="text"],
@@ -68,7 +68,7 @@ button {
 }
 
 button:hover {
-    background-color: #00b327;
+    background-color: #3a7ab6;
 }
 
 input.ng-invalid.ng-touched {
