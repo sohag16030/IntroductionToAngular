@@ -18,14 +18,13 @@ export class EmployeeComponent {
     this.reactiveForm = this.fb.group({
       personalFormGroup: this.fb.group({
         fullName: [null, Validators.required, this.noSpaceAllowed], // Updated form control name to fullName
-        mobileNumber:[null, Validators.required],
+        mobileNumber: [null, Validators.required],
         email: [null, [Validators.required, Validators.email]],
       })
     });
   }
 
   onSubmit() {
-    
     // Api call for save the data into database
     if (this.reactiveForm.valid) {
       const formData = this.reactiveForm.value.personalFormGroup;
@@ -43,7 +42,9 @@ export class EmployeeComponent {
     } else {
       console.log('Form is invalid. Cannot submit.');
     }
-
+  }
+  private fetchProducts() {
+    
   }
 
   noSpaceAllowed(control: AbstractControl): Promise<ValidationErrors | null> {
@@ -55,4 +56,5 @@ export class EmployeeComponent {
       }
     });
   }
+
 }
