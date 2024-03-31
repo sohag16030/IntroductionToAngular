@@ -25,6 +25,21 @@ export class AppComponent {
         new FormControl(null, Validators.required)
       ])
     });
+
+    this.reactiveForm.statusChanges.subscribe((value) => {
+      console.log("statusChanges :: " + value);
+    });
+
+    this.reactiveForm.setValue({
+      personalFormGroup: {
+        firstName: '',
+        lastName: '',
+        email: 'example@gmail.com',
+      },
+      country: '',
+      gender: '',
+      skills: []
+    });
   }
 
   onSubmit() {
