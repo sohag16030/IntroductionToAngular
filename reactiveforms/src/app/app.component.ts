@@ -39,7 +39,16 @@ export class AppComponent {
 
   onSubmit() {
     console.log(this.reactiveForm);
-    
+    this.reactiveForm.reset({
+      personalFormGroup: ({
+        firstName: '',
+        lastName: '',
+        email: 'example@gmail.com',
+      }),
+      country: 'USA',
+      gender: [null],
+      skills: []
+    });
   }
   addSkills() {
     (<FormArray>this.reactiveForm.get('skills')).push(new FormControl(null, Validators.required));
