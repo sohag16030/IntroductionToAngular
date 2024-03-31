@@ -39,6 +39,7 @@ export class AppComponent {
 
   onSubmit() {
     console.log(this.reactiveForm);
+    
   }
   addSkills() {
     (<FormArray>this.reactiveForm.get('skills')).push(new FormControl(null, Validators.required));
