@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -15,8 +15,8 @@ export class AppComponent {
   ngOnInit() {
     this.reactiveForm = this.fb.group({
       personalFormGroup: this.fb.group({
-        firstName: [null, Validators.required],
-        lastName: [null, Validators.required],
+        firstName: [null, Validators.required, this.noSpaceAllowed],
+        lastName: [null, Validators.required, this.noSpaceAllowed],
         email: [null, [Validators.required, Validators.email]],
       }),
       country: [null],
@@ -31,6 +31,16 @@ export class AppComponent {
     console.log(this.reactiveForm);
   }
   addSkills() {
-    (<FormArray>this.reactiveForm.get('skills')).push(new FormControl(null,Validators.required));
+    (<FormArray>this.reactiveForm.get('skills')).push(new FormControl(null, Validators.required));
+  }
+
+  noSpaceAllowed(control: AbstractControl): Promise<ValidationErrors | null> {
+    return new Promise((resolve) => {
+      if (control.value !== null && control.value.indexOf(' ') !== -1) {
+        resolve({ noSpaceAllowed: true });
+      } else {
+        resolve(null);
+      }
+    });
   }
 }

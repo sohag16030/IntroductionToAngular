@@ -6,7 +6,16 @@
       <div class="form-group">
         <label for="firstName">First Name:</label>
         <input type="text" id="firstName" name="firstName" formControlName="firstName" />
+        <div style="color: red;">
+          <small *ngIf="reactiveForm.get('personalFormGroup.firstName').errors?.['required']">
+            First Name is a required field
+          </small>
+          <small *ngIf="reactiveForm.get('personalFormGroup.firstName').errors?.['noSpaceAllowed']">
+            First Name can not contain a space
+          </small>
+        </div>
       </div>
+
       <div class="form-group">
         <label for="lastName">Last Name:</label>
         <input type="text" id="lastName" name="lastName" formControlName="lastName" />
@@ -16,7 +25,8 @@
         <input type="email" id="email" name="email" formControlName="email" />
         <span style="color: red;"
           *ngIf="!reactiveForm.get('personalFormGroup.email').valid && reactiveForm.get('personalFormGroup.email').touched">
-          This email you entered is not a valid email</span>
+          This email you entered is not a valid email
+        </span>
       </div>
     </div>
 
@@ -45,7 +55,7 @@
     </div>
     <div formArrayName="skills">
       <ng-container *ngFor="let skill of reactiveForm.get('skills')['controls'];index as i">
-      <input type="text" placeholder="add skill..." formControlName="{{i}}">
+        <input type="text" placeholder="add skill..." formControlName="{{i}}">
       </ng-container>
       <button (click)="addSkills()">Add Skills</button>
     </div>
