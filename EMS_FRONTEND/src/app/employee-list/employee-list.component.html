@@ -1,0 +1,30 @@
+<div class="container">
+    <h2>Employee List</h2>
+    <table class="employee-table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Full Name</th>
+          <th>Mobile Number</th>
+          <th>Email</th>
+          <th>Actions</th> <!-- Added column for actions -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employeeList">
+          <td>{{ employee.emsUserId }}</td>
+          <td>{{ employee.fullName }}</td>
+          <td>{{ employee.mobileNumber }}</td>
+          <td>{{ employee.email }}</td>
+          <td>
+            <button (click)="showDetails(employee)">Details</button> <!-- Button to show details -->
+            <!-- <button (click)="editRecord(employee)">Edit</button>   -->
+            <button>Edit</button>
+            <button (click)="deleteRecord(employee.emsUserId)">Delete</button> <!-- Button to delete record -->
+            
+        </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

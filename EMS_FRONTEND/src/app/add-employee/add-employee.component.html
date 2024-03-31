@@ -1,0 +1,46 @@
+<div class="container">
+    <h1>Registration Form</h1>
+    <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+  
+      <div formGroupName="personalFormGroup">
+        <div class="form-group">
+          <label for="fullName">Full Name</label> <!-- Update label -->
+          <input type="text" id="fullName" name="fullName" formControlName="fullName" /> <!-- Update formControlName -->
+          <div style="color: red;">
+            <small *ngIf="reactiveForm.get('personalFormGroup.fullName').errors?.['required']">
+               Full Name is a required field <!-- Update error message -->
+            </small>
+            <small *ngIf="reactiveForm.get('personalFormGroup.fullName').errors?.['noSpaceAllowed']">
+               Full Name can not contain a space <!-- Update error message -->
+            </small>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="mobileNumber">Mobile Number:</label>
+          <input type="text" id="mobileNumber" name="mobileNumber" formControlName="mobileNumber" />
+          <div style="color: red;">
+            <small *ngIf="reactiveForm.get('personalFormGroup.mobileNumber').errors?.['required']">
+              Mobile Number is a required field
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" formControlName="email" />
+          <div style="color: red;">
+            <span style="color: red;"
+              *ngIf="!reactiveForm.get('personalFormGroup.email').valid && reactiveForm.get('personalFormGroup.email').touched">
+              Email you entered is not a valid email
+            </span>
+            <small *ngIf="reactiveForm.get('personalFormGroup.email').errors?.['required']">
+              Email is a required field
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>

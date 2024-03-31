@@ -1,0 +1,22 @@
+.container {
+    width: 90%;
+    margin-top: 20px;
+    margin-left: 50px;
+  }
+  
+  .employee-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .employee-table th,
+  .employee-table td {
+    border: 1px solid #17a78f;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .employee-table th {
+    background-color: #62beaf;
+  }
+  
