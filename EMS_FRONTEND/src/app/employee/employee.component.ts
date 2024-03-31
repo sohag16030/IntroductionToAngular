@@ -33,6 +33,7 @@ export class EmployeeComponent {
         .subscribe(
           (response) => {
             console.log('Successfully saved:', response);
+            this.reactiveForm.reset();
           },
           (error) => {
             console.error('Error occurred while saving:', error);
