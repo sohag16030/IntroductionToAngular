@@ -26,11 +26,11 @@ import java.time.LocalDateTime;
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "USER_ID")
-    private Long userId;
+    @Column(name = "EMS_USER_ID")
+    private Long emsUserId;
 
-    @Column(name = "NAME", nullable = false)
-    private String name;
+    @Column(name = "FULLNAME", nullable = false)
+    private String fullName;
 
     @Column(name = "MOBILE_NUMBER", unique = true, nullable = false)
     private String mobileNumber;

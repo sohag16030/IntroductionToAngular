@@ -13,6 +13,7 @@ public class EmsService {
 
     // Create
     public Employee createEmployee(Employee employee) {
+        employee.setIsActive(true);
         return employeeRepository.save(employee);
     }
 
@@ -31,7 +32,7 @@ public class EmsService {
     public Employee updateEmployee(Long userId, Employee employeeDetails) {
         Employee existingEmployee = getEmployeeById(userId);
         if (existingEmployee != null) {
-            existingEmployee.setName(employeeDetails.getName());
+            existingEmployee.setFullName(employeeDetails.getFullName());
             existingEmployee.setMobileNumber(employeeDetails.getMobileNumber());
             existingEmployee.setEmail(employeeDetails.getEmail());
             existingEmployee.setIsActive(employeeDetails.getIsActive());

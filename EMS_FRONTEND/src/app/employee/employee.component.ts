@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.component.html',
-  styleUrl: './employee.component.css'
+  styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent {
 
@@ -17,7 +17,7 @@ export class EmployeeComponent {
   ngOnInit() {
     this.reactiveForm = this.fb.group({
       personalFormGroup: this.fb.group({
-        name: [null, Validators.required, this.noSpaceAllowed],
+        fullName: [null, Validators.required, this.noSpaceAllowed], // Updated form control name to fullName
         mobileNumber:[null, Validators.required],
         email: [null, [Validators.required, Validators.email]],
       })
@@ -28,9 +28,8 @@ export class EmployeeComponent {
     
     // Api call for save the data into database
     if (this.reactiveForm.valid) {
-      console.log("i am here")
       const formData = this.reactiveForm.value.personalFormGroup;
-      this.http.post('http://localhost:8080/api/emsUsers', formData)
+      this.http.post('http://localhost:8081/api/emsUsers', formData)
         .subscribe(
           (response) => {
             console.log('Successfully saved:', response);

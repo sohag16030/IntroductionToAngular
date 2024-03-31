@@ -4,14 +4,14 @@
   
       <div formGroupName="personalFormGroup">
         <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" formControlName="name" />
+          <label for="fullName">Full Name</label> <!-- Update label -->
+          <input type="text" id="fullName" name="fullName" formControlName="fullName" /> <!-- Update formControlName -->
           <div style="color: red;">
-            <small *ngIf="reactiveForm.get('personalFormGroup.name').errors?.['required']">
-               Name is a required field
+            <small *ngIf="reactiveForm.get('personalFormGroup.fullName').errors?.['required']">
+               Full Name is a required field <!-- Update error message -->
             </small>
-            <small *ngIf="reactiveForm.get('personalFormGroup.name').errors?.['noSpaceAllowed']">
-               Name can not contain a space
+            <small *ngIf="reactiveForm.get('personalFormGroup.fullName').errors?.['noSpaceAllowed']">
+               Full Name can not contain a space <!-- Update error message -->
             </small>
           </div>
         </div>
