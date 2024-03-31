@@ -30,15 +30,10 @@ export class AppComponent {
       console.log("statusChanges :: " + value);
     });
 
-    this.reactiveForm.setValue({
+    this.reactiveForm.patchValue({
       personalFormGroup: {
-        firstName: '',
-        lastName: '',
         email: 'example@gmail.com',
-      },
-      country: '',
-      gender: '',
-      skills: []
+      }
     });
   }
 
