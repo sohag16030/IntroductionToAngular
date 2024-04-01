@@ -15,7 +15,7 @@ export class EmployeeService {
         return this.http.post(`${BASIC_URL}/api/emsUsers`, employeeData);
     }
 
-    getByIdEmployee(employeeId: number): Observable<any> {
+    getEmployeeById(employeeId: number): Observable<any> {
         return this.http.get(`${BASIC_URL}/api/emsUsers/${employeeId}`);
     }
 

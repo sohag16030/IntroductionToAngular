@@ -1,0 +1,16 @@
+.container {
+    background-color: rgb(169, 210, 210);
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    background-color: rgb(0, 145, 255);
+    display: block;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  

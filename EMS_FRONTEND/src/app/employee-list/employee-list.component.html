@@ -17,11 +17,9 @@
           <td>{{ employee.mobileNumber }}</td>
           <td>{{ employee.email }}</td>
           <td>
-            <button (click)="showDetails(employee)">Details</button> <!-- Button to show details -->
-            <!-- <button (click)="editRecord(employee)">Edit</button>   -->
+            <button [routerLink]="'/Employees/Employee/' + employee.emsUserId">Details</button>
             <button>Edit</button>
-            <button (click)="deleteRecord(employee.emsUserId)">Delete</button> <!-- Button to delete record -->
-            
+            <button (click)="deleteRecord(employee.emsUserId)">Delete</button>
         </td>
         </tr>
       </tbody>

@@ -1,0 +1,13 @@
+<button routerLink="/Employees" style="margin:20px 30px;">Back</button>
+<div class="container">
+    <h1>Employee Details</h1>
+    <div *ngIf="employee">
+      <p><strong>Name:</strong> {{ employee.fullName }}</p>
+      <p><strong>Mobile Number:</strong> {{ employee.mobileNumber }}</p>
+      <p><strong>Email:</strong> {{ employee.email }}</p>
+      <p><strong>Active:</strong> {{ employee.isActive ? 'Yes' : 'No' }}</p>
+      <p><strong>Created At:</strong> {{ employee.createdAt | date }}</p>
+      <p><strong>Updated At:</strong> {{ employee.updatedAt | date }}</p>
+    </div>
+  </div>
+  

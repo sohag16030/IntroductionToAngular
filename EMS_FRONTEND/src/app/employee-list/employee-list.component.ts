@@ -28,19 +28,6 @@ export class EmployeeListComponent implements OnInit {
     );
   }
 
-  showDetails(employee: any) {
-    this.employeeService.getByIdEmployee(employee.emsUserId).subscribe(
-      (response) => {
-        console.log('Details of employee:', response);
-        // Implement logic to display details, e.g., open a modal with employee details
-      },
-      (error) => {
-        console.error('Error occurred while fetching employee details:', error);
-        // Handle error scenario
-      }
-    );
-  }
-
   deleteRecord(emsUserId: number) {
     this.employeeService.deleteEmployee(emsUserId).subscribe(
       () => {
