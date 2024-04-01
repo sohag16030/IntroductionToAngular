@@ -35,7 +35,7 @@ public class EmsService {
             existingEmployee.setFullName(employeeDetails.getFullName());
             existingEmployee.setMobileNumber(employeeDetails.getMobileNumber());
             existingEmployee.setEmail(employeeDetails.getEmail());
-            existingEmployee.setIsActive(employeeDetails.getIsActive());
+            existingEmployee.setIsActive(true);
             return employeeRepository.save(existingEmployee);
         }
         return null;

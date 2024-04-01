@@ -24,11 +24,11 @@ export class EmployeeService {
     }
 
     updateEmployee(employeeId: number, updatedData: any): Observable<any> {
+        console.log("updateservice is called");
         return this.http.put(`${BASIC_URL}/api/emsUsers/${employeeId}`, updatedData);
     }
 
     deleteEmployee(employeeId: number): Observable<any> {
         return this.http.delete(`${BASIC_URL}/api/emsUsers/${employeeId}`);
     }
-   
 }

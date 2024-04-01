@@ -18,8 +18,8 @@
           <td>{{ employee.email }}</td>
           <td>
             <button [routerLink]="'/Employees/Employee/' + employee.emsUserId">Details</button>
-            <button>Edit</button>
-            <button (click)="deleteRecord(employee.emsUserId)">Delete</button>
+            <button [routerLink]="'/Employees/EditEmployee/' + employee.emsUserId">Edit</button>
+            <button [routerLink]="'/Employees/Employee/' + employee.emsUserId">Delete</button>
         </td>
         </tr>
       </tbody>
